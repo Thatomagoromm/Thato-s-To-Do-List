@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-image: url('../Downloads/THATO\ TG.jpg'); /* Set the URL to your desired image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        li{
+            color: aliceblue;
+        }
+        h1 {
+            left: 50px; /* set lest site h3 (To Do List) to 75px */
+            text-align: left; /* left align the h1 */
+            color: aliceblue;
+        }
+        .add-task {
+            margin-top: 20px;
+            text-align: Left;
+        }
+        input[type="text"], button {
+            background-color: white; /* Set background color of input and button to white */
+            color: rgb(61, 176, 41); /* Set text color of input and button to black */
+            border: none;
+            padding: 8px 16px;
+            margin-right: 10px;
+        }
+        button {
+            cursor: pointer;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do-List</title>
+</head>
+<body>
+    <h1> To do list</h1>
+   
+    <div class="add-task">
+        <input type="text" id="task-input" placeholder="Add a new task">
+        <button onclick="addTask()">Add Task</button>
+    </div>
+    <ul id="todo-list">
+    
+    </ul>
+
+    <script>
+        function addTask() {
+            var taskInput = document.getElementById("task-input");
+            var taskText = taskInput.value.trim();
+            if (taskText !== "") {
+                var ul = document.getElementById("todo-list");
+                var li = document.createElement("li");
+                li.textContent = taskText;
+                ul.appendChild(li);
+                taskInput.value = "";
+            } else {
+                alert("Please enter a task!");
+            }
+        }
+    </script>
+</body>
+</html>
+
+ 
